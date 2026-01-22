@@ -12,7 +12,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Jenkins on Udemy
+          Learn Jenkins on Udemy in class DevOps NU
         </a>
       </header>
       <p>
