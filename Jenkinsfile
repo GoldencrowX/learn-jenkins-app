@@ -1,9 +1,9 @@
 pipeline {
+  environment {
+    VERCEL_PROJECT_NAME = 'learn-jenkins-app'
+    VERCEL_TOKEN = credentials('vercel-token') // ดึงจาก Jenkins
+  }
   agent {
-    environment {
-      VERCEL_PROJECT_NAME = 'learn-jenkins-app'
-      VERCEL_TOKEN = credentials('vercel-token') // ดึงจาก Jenkins
-    }
     kubernetes {
       // This YAML defines the "Docker Container" you want to use
       yaml '''
