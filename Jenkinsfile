@@ -1,21 +1,20 @@
 pipeline {
-    agent{
+    agent {
         kubernetes {
             // This YAML defines the "Docker Container" you want to use
             yaml '''
-                apiVersion: v1
-                kind: Pod
-                spec:
+            apiVersion: v1
+            kind: Pod
+            spec:
                 containers:
-                - name: my-builder  # We will refer to this name later
-                    image: node:18-alpine
-                    command:
-                    - cat
-                    tty: true
+                    - name: my-builder  # We will refer to this name later
+                        image: node:18-alpine
+                        command:
+                            - cat
+                        tty: true
             '''
         }
     }
-    
     stages {
         stage('Test npm') {
             steps {
